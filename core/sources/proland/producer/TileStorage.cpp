@@ -41,8 +41,6 @@
 
 #include "proland/producer/TileStorage.h"
 
-#include <pthread.h>
-
 using namespace std;
 
 namespace proland
@@ -51,14 +49,12 @@ namespace proland
 TileStorage::Slot::Slot(TileStorage *owner) :
     producerTask(NULL), owner(owner)
 {
-    mutex = new pthread_mutex_t;
-    pthread_mutex_init((pthread_mutex_t*) mutex, NULL);
+
 }
 
 TileStorage::Slot::~Slot()
 {
-    pthread_mutex_destroy((pthread_mutex_t*) mutex);
-    delete (pthread_mutex_t*) mutex;
+
 }
 
 TileStorage *TileStorage::Slot::getOwner()
@@ -69,9 +65,9 @@ TileStorage *TileStorage::Slot::getOwner()
 void TileStorage::Slot::lock(bool lock)
 {
     if (lock) {
-        pthread_mutex_lock((pthread_mutex_t*) mutex);
+		mutex.lock();
     } else {
-        pthread_mutex_unlock((pthread_mutex_t*) mutex);
+		mutex.unlock();
     }
 }
 

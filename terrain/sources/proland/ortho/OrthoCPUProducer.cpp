@@ -53,10 +53,17 @@
 #include "proland/producer/CPUTileStorage.h"
 #include "proland/util/mfs.h"
 
-#include <pthread.h>
-
 using namespace std;
 using namespace ork;
+
+namespace
+{
+
+	/**
+	* A key to store thread specific buffers used to produce the tiles.
+	*/
+	thread_local std::unique_ptr<unsigned char[]> key;
+}
 
 namespace proland
 {
@@ -64,8 +71,6 @@ namespace proland
 //#define SINGLE_FILE
 
 #define MAX_TILE_SIZE 512
-
-void *OrthoCPUProducer::key = NULL;
 
 void orthoCPUDelete(void* data)
 {
@@ -125,11 +130,6 @@ void OrthoCPUProducer::init(ptr<TileCache> cache, const char *name)
     #endif
         }
 
-        if (key == NULL) {
-            key = new pthread_key_t;
-            pthread_key_create((pthread_key_t*) key, orthoCPUDelete);
-        }
-
         assert(tileSize + 2*border < MAX_TILE_SIZE);
 
     #ifdef SINGLE_FILE
@@ -186,10 +186,10 @@ bool OrthoCPUProducer::doCreateTile(int level, int tx, int ty, TileStorage::Slot
         assert(cpuData->getOwner()->getTileSize() == tileSize + 2*border);
         assert(level <= maxLevel);
 
-        unsigned char *compressedData = (unsigned char*) pthread_getspecific(*((pthread_key_t*) key));
+        unsigned char *compressedData = key.get();
         if (compressedData == NULL) {
             compressedData = new unsigned char[MAX_TILE_SIZE * MAX_TILE_SIZE * 4 * 2];
-            pthread_setspecific(*((pthread_key_t*) key), compressedData);
+            key.reset(compressedData);
         }
 
         int fsize = (int) (offsets[2 * tileid + 1] - offsets[2 * tileid]);

@@ -40,6 +40,7 @@
  */
 
 #include "proland/preprocess/terrain/AbstractTileCache.h"
+#include <algorithm>
 
 namespace proland
 {

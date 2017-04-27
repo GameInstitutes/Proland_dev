@@ -51,11 +51,20 @@
 #include "proland/producer/CPUTileStorage.h"
 #include "proland/util/mfs.h"
 
-#include <pthread.h>
 #include <cstring>
+#include <algorithm>
 
 using namespace std;
 using namespace ork;
+
+namespace
+{
+
+	/**
+	* A key to store thread specific buffers used to produce the tiles.
+	*/
+	thread_local std::unique_ptr<unsigned char[]> key;
+}
 
 namespace proland
 {
@@ -63,8 +72,6 @@ namespace proland
 //#define SINGLE_FILE
 
 #define MAX_TILE_SIZE 256
-
-void *ResidualProducer::key = NULL;
 
 void residualDelete(void* data)
 {
@@ -125,11 +132,6 @@ void ResidualProducer::init(ptr<TileCache> cache, const char *name, int deltaLev
             fclose(tileFile);
             tileFile = NULL;
 #endif
-        }
-
-        if (key == NULL) {
-            key = new pthread_key_t;
-            pthread_key_create((pthread_key_t*) key, residualDelete);
         }
 
         assert(tileSize + 5 < MAX_TILE_SIZE);
@@ -221,10 +223,10 @@ bool ResidualProducer::doCreateTile(int level, int tx, int ty, TileStorage::Slot
     } else {
         assert(cpuData->getOwner()->getTileSize() == tileSize + 5);
 
-        unsigned char *tsData = (unsigned char*) pthread_getspecific(*((pthread_key_t*) key));
+        unsigned char *tsData = key.get();
         if (tsData == NULL) {
             tsData = new unsigned char[MAX_TILE_SIZE * MAX_TILE_SIZE * 4];
-            pthread_setspecific(*((pthread_key_t*) key), tsData);
+            key.reset(tsData);
         }
         unsigned char *compressedData = tsData;
         unsigned char *uncompressedData = tsData + MAX_TILE_SIZE * MAX_TILE_SIZE * 2;

@@ -44,6 +44,7 @@
 #include "ork/math/pmath.h"
 #include "ork/render/CPUBuffer.h"
 #include "ork/resource/ResourceTemplate.h"
+#include <algorithm>
 
 using namespace std;
 using namespace ork;

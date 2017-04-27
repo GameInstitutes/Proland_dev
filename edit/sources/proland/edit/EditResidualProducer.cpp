@@ -44,6 +44,7 @@
 #include "ork/core/Logger.h"
 #include "ork/resource/ResourceTemplate.h"
 #include "proland/producer/CPUTileStorage.h"
+#include <algorithm>
 
 using namespace std;
 using namespace ork;

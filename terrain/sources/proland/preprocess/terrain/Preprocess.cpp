@@ -43,6 +43,8 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <algorithm>
+#include <direct.h>
 
 #include <errno.h>
 
@@ -522,7 +524,9 @@ void createDir(const string &dir)
             createDir(dir.substr(0, index));
         }
     }
-    int status = mkdir(dir.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	
+    //int status = mkdir(dir.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	int status = mkdir(dir.c_str());
     if (status != 0 && errno != EEXIST) {
         fprintf(stderr, "Cannot create directory %s\n", dir.c_str());
         throw exception();

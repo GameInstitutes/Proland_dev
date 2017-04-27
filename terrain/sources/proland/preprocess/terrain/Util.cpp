@@ -46,9 +46,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <fcntl.h>
-
-// Lars F: addition, since they use close() below
-#include <unistd.h>
+#include <io.h>
 
 #include "ork/core/Object.h"
 
@@ -169,7 +167,7 @@ void GetMinMaxColorsDXT1( const byte *colorBlock, byte *minColor, byte *maxColor
 }
 
 //#define ALIGN16( x ) __declspec(align(16)) x
-#define ALIGN16( x ) x __attribute__ ((aligned (16)))
+#define ALIGN16( x ) alignas(16) x
 
 #define R_SHUFFLE_D( x, y, z, w ) (( (w) & 3 ) << 6 | ( (z) & 3 ) << 4 | ( (y) & 3 ) << 2 | ( (x) & 3 ))
 

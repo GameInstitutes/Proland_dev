@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BC112E6D-738F-42F0-A86F-22045930A688}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)output\include;$(SolutionDir)thirdparty\include;$(ProjectDir)sources;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)thirdparty\lib\$(Platform);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)output\include;$(SolutionDir)thirdparty\include;$(ProjectDir)sources;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)thirdparty\lib\$(Platform);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)output\include;$(SolutionDir)thirdparty\include;$(ProjectDir)sources;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)thirdparty\lib\$(Platform);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)output\include;$(SolutionDir)thirdparty\include;$(ProjectDir)sources;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)thirdparty\lib\$(Platform);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>PROLAND_API=__declspec(dllexport);ORK_API=__declspec(dllimport);TIXML_USE_STL;USEFREEGLUT;USE_SHARED_PTR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>ork.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /e/y $(ProjectDir)sources\*.h $(SolutionDir)output\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>PROLAND_API=__declspec(dllexport);ORK_API=__declspec(dllimport);TIXML_USE_STL;USEFREEGLUT;USE_SHARED_PTR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ork.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /e/y $(ProjectDir)sources\*.h $(SolutionDir)output\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>PROLAND_API=__declspec(dllexport);ORK_API=__declspec(dllimport);TIXML_USE_STL;USEFREEGLUT;USE_SHARED_PTR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ork.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /e/y $(ProjectDir)sources\*.h $(SolutionDir)output\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>PROLAND_API=__declspec(dllexport);ORK_API=__declspec(dllimport);TIXML_USE_STL;USEFREEGLUT;USE_SHARED_PTR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ork.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /e/y $(ProjectDir)sources\*.h $(SolutionDir)output\include</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\proland\EditPlugin.cpp" />
+    <ClCompile Include="sources\proland\edit\EditElevationProducer.cpp" />
+    <ClCompile Include="sources\proland\edit\EditGraphOrthoLayer.cpp" />
+    <ClCompile Include="sources\proland\edit\EditHydroGraphOrthoLayer.cpp" />
+    <ClCompile Include="sources\proland\edit\EditorHandler.cpp" />
+    <ClCompile Include="sources\proland\edit\EditOrthoCPUProducer.cpp" />
+    <ClCompile Include="sources\proland\edit\EditOrthoProducer.cpp" />
+    <ClCompile Include="sources\proland\edit\EditResidualProducer.cpp" />
+    <ClCompile Include="sources\proland\ui\twbar\TweakDemEditor.cpp" />
+    <ClCompile Include="sources\proland\ui\twbar\TweakGraphLayer.cpp" />
+    <ClCompile Include="sources\proland\ui\twbar\TweakHydroGraphLayer.cpp" />
+    <ClCompile Include="sources\proland\ui\twbar\TweakOrthoEditor.cpp" />
+    <ClCompile Include="sources\proland\ui\twbar\TweakRivers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sources\proland\EditPlugin.h" />
+    <ClInclude Include="sources\proland\edit\EditElevationProducer.h" />
+    <ClInclude Include="sources\proland\edit\EditGraphOrthoLayer.h" />
+    <ClInclude Include="sources\proland\edit\EditHydroGraphOrthoLayer.h" />
+    <ClInclude Include="sources\proland\edit\EditorHandler.h" />
+    <ClInclude Include="sources\proland\edit\EditOrthoCPUProducer.h" />
+    <ClInclude Include="sources\proland\edit\EditOrthoProducer.h" />
+    <ClInclude Include="sources\proland\edit\EditResidualProducer.h" />
+    <ClInclude Include="sources\proland\ui\twbar\TweakDemEditor.h" />
+    <ClInclude Include="sources\proland\ui\twbar\TweakGraphLayer.h" />
+    <ClInclude Include="sources\proland\ui\twbar\TweakHydroGraphLayer.h" />
+    <ClInclude Include="sources\proland\ui\twbar\TweakOrthoEditor.h" />
+    <ClInclude Include="sources\proland\ui\twbar\TweakRivers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\core\proland-core.vcxproj">
+      <Project>{366e4cb1-a2c8-4b28-9669-edf64bc799cf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\forest\proland-forest.vcxproj">
+      <Project>{ffd6afab-7aee-4169-9802-1bc4541a0a24}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\graph\proland-graph.vcxproj">
+      <Project>{20e1e328-330b-42f7-90ab-f96d3c9a120f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ocean\proland-ocean.vcxproj">
+      <Project>{36c36430-7dc7-4a30-8cb4-be5c03ae650d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\river\proland-river.vcxproj">
+      <Project>{5094a1f4-119f-4cdc-a8a6-182359c113d1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\terrain\proland-terrain.vcxproj">
+      <Project>{5f0ae423-c143-4f2d-9a42-57994282ad00}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

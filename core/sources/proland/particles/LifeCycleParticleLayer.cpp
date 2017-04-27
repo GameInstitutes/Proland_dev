@@ -42,6 +42,7 @@
 #include "proland/particles/LifeCycleParticleLayer.h"
 
 #include "ork/resource/ResourceTemplate.h"
+#include <algorithm>
 
 using namespace std;
 using namespace ork;

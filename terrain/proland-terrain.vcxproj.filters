@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Header Files\dem">
+      <UniqueIdentifier>{e2d8afeb-cdeb-46b4-a45b-842727c5592e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dem">
+      <UniqueIdentifier>{90b09cf7-6267-40ef-b2ae-9a7d1113ad37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ortho">
+      <UniqueIdentifier>{e13a9240-d8ae-4ba0-9902-e7840a15c575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ortho">
+      <UniqueIdentifier>{c10a62d5-36ff-4729-bfa9-4c126b9f79cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\preprocess">
+      <UniqueIdentifier>{46c80900-7216-43bd-9877-40617117ed9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\preprocess">
+      <UniqueIdentifier>{6382a527-8185-42ff-8ceb-9670f90ed29e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\preprocess\terrain">
+      <UniqueIdentifier>{019ed8b8-10a4-4f68-8b9b-2bc3ef7f34a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\preprocess\terrain">
+      <UniqueIdentifier>{543be4cf-493f-40e8-9609-0a256663471a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\proland\dem\CPUElevationProducer.cpp">
+      <Filter>Source Files\dem</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\dem\ElevationProducer.cpp">
+      <Filter>Source Files\dem</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\dem\NormalProducer.cpp">
+      <Filter>Source Files\dem</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\dem\ResidualProducer.cpp">
+      <Filter>Source Files\dem</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\ortho\EmptyOrthoLayer.cpp">
+      <Filter>Source Files\ortho</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\ortho\OrthoCPUProducer.cpp">
+      <Filter>Source Files\ortho</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\ortho\OrthoGPUProducer.cpp">
+      <Filter>Source Files\ortho</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\ortho\OrthoProducer.cpp">
+      <Filter>Source Files\ortho</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\ortho\TextureLayer.cpp">
+      <Filter>Source Files\ortho</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\preprocess\terrain\AbstractTileCache.cpp">
+      <Filter>Source Files\preprocess\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\preprocess\terrain\ApertureMipmap.cpp">
+      <Filter>Source Files\preprocess\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\preprocess\terrain\ColorMipmap.cpp">
+      <Filter>Source Files\preprocess\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\preprocess\terrain\HeightMipmap.cpp">
+      <Filter>Source Files\preprocess\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\preprocess\terrain\Preprocess.cpp">
+      <Filter>Source Files\preprocess\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\TerrainPlugin.cpp">
+      <Filter>Source Files\preprocess\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\preprocess\terrain\Util.cpp">
+      <Filter>Source Files\preprocess\terrain</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sources\proland\dem\CPUElevationProducer.h">
+      <Filter>Header Files\dem</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\dem\ElevationProducer.h">
+      <Filter>Header Files\dem</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\dem\NormalProducer.h">
+      <Filter>Header Files\dem</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\dem\ResidualProducer.h">
+      <Filter>Header Files\dem</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\ortho\EmptyOrthoLayer.h">
+      <Filter>Header Files\ortho</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\ortho\OrthoCPUProducer.h">
+      <Filter>Header Files\ortho</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\ortho\OrthoGPUProducer.h">
+      <Filter>Header Files\ortho</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\ortho\OrthoProducer.h">
+      <Filter>Header Files\ortho</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\ortho\TextureLayer.h">
+      <Filter>Header Files\ortho</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\preprocess\terrain\AbstractTileCache.h">
+      <Filter>Header Files\preprocess\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\preprocess\terrain\ApertureMipmap.h">
+      <Filter>Header Files\preprocess\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\preprocess\terrain\ColorMipmap.h">
+      <Filter>Header Files\preprocess\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\preprocess\terrain\HeightMipmap.h">
+      <Filter>Header Files\preprocess\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\preprocess\terrain\Preprocess.h">
+      <Filter>Header Files\preprocess\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\TerrainPlugin.h">
+      <Filter>Header Files\preprocess\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\preprocess\terrain\Util.h">
+      <Filter>Header Files\preprocess\terrain</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

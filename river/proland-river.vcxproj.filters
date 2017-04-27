@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Header Files\rivers">
+      <UniqueIdentifier>{568e161a-7e5e-4658-957c-1b8a3fe6b4f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rivers">
+      <UniqueIdentifier>{d4de1c23-c1f2-4e58-b401-4d97762d4ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\rivers\graph">
+      <UniqueIdentifier>{2f322adf-50fe-4ecf-9bbb-94dbb33e8b98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rivers\graph">
+      <UniqueIdentifier>{585e87fe-20f1-46d8-bf8a-d47a22e19410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui">
+      <UniqueIdentifier>{10b5d984-04da-4ec0-bb11-f32fcbd56306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui\twbar">
+      <UniqueIdentifier>{84e879d2-3c33-49c9-b7b1-e313a50ad18a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{2e8fab63-dfe8-4d29-814c-a9d2478e7f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui\twbar">
+      <UniqueIdentifier>{ef3d7d8e-da7d-44f5-a4ad-97d12d3e1f56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\proland\RiverPlugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\AnimatedPerlinWaveTile.cpp">
+      <Filter>Source Files\rivers</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\DrawRiversTask.cpp">
+      <Filter>Source Files\rivers</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\HydroFlowProducer.cpp">
+      <Filter>Source Files\rivers</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\HydroFlowTile.cpp">
+      <Filter>Source Files\rivers</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\PerlinWaveTile.cpp">
+      <Filter>Source Files\rivers</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\UpdateRiversTask.cpp">
+      <Filter>Source Files\rivers</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\WaveTile.cpp">
+      <Filter>Source Files\rivers</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\graph\HydroCurve.cpp">
+      <Filter>Source Files\rivers\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\graph\HydroGraph.cpp">
+      <Filter>Source Files\rivers\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\graph\HydroGraphFactory.cpp">
+      <Filter>Source Files\rivers\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\graph\LazyHydroCurve.cpp">
+      <Filter>Source Files\rivers\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\graph\LazyHydroGraph.cpp">
+      <Filter>Source Files\rivers\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\rivers\graph\LazyHydroGraphFactory.cpp">
+      <Filter>Source Files\rivers\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\proland\ui\twbar\TweakRivers.cpp">
+      <Filter>Source Files\ui\twbar</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sources\proland\RiverPlugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\AnimatedPerlinWaveTile.h">
+      <Filter>Header Files\rivers</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\DrawRiversTask.h">
+      <Filter>Header Files\rivers</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\HydroFlowProducer.h">
+      <Filter>Header Files\rivers</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\HydroFlowTile.h">
+      <Filter>Header Files\rivers</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\PerlinWaveTile.h">
+      <Filter>Header Files\rivers</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\UpdateRiversTask.h">
+      <Filter>Header Files\rivers</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\WaveTile.h">
+      <Filter>Header Files\rivers</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\graph\HydroCurve.h">
+      <Filter>Header Files\rivers\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\graph\HydroGraph.h">
+      <Filter>Header Files\rivers\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\graph\HydroGraphFactory.h">
+      <Filter>Header Files\rivers\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\graph\LazyHydroCurve.h">
+      <Filter>Header Files\rivers\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\graph\LazyHydroGraph.h">
+      <Filter>Header Files\rivers\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\rivers\graph\LazyHydroGraphFactory.h">
+      <Filter>Header Files\rivers\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\proland\ui\twbar\TweakRivers.h">
+      <Filter>Header Files\ui\twbar</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

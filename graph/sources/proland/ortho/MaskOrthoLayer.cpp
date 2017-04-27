@@ -289,7 +289,7 @@ public:
         vec4f color = vec4f(0.f, 0.f, 0.f, 0.f);
         vec4f blendColor = vec4f(0.f, 0.f, 0.f, 0.f);
         set<int> ignored;
-        bool deform;
+        bool deform = false;
 
         checkParameters(desc, e, "name,graph,deform,ignore,renderProg,level,blendBuffer,blendColor,color,depth,widthFactor,channels,equation,sourceFunction,destinationFunction,equationAlpha,sourceFunctionAlpha,destinationFunctionAlpha,");
         string g = getParameter(desc, e, "graph");
